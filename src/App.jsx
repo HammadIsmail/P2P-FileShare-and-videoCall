@@ -11,7 +11,7 @@ function App() {
     
      
       {/* Give User the Options to do Stuff */}
-    { page==0 ?  <div className="flex gap-3">
+    { page==0 ?  <div className="flex justify-center min-h-screen  items-center gap-3">
         <button onClick={()=>SetPage(1)} className="btn-primary"> Make a Call</button>
         <button onClick={()=>SetPage(2)} className="btn-primary">File Transfer</button>
       </div>

@@ -1,7 +1,7 @@
 import Peer from "peerjs";
 import '../App.css';
 import { useRef, useState, useEffect } from "react";
-import { CopySimple } from "phosphor-react";
+import { CopySimple, DownloadSimple } from "phosphor-react";
 import { SuccessNotification, WarningNotification } from '../utils/Notifications'
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -193,7 +193,7 @@ function SendFile({SetPage}) {
 
   return (
     <>
-      <div>
+      <div className="flex flex-col justify-center items-center h-screen w-screen">
         {!peerID ? (
           <button className="btn-primary" onClick={startConnection}>Start Connection</button>
         ) : (
@@ -211,9 +211,9 @@ function SendFile({SetPage}) {
                 <hr className="border-1 border-gray-300" />
                 <div className="flex gap-2">  
                 <h1 className="  border-2 text-lg font-semibold rounded-md p-1  text-wrap">{connectedPeerID}</h1>
-            <button className="btn-primary" onClick={handleDisconnect}>Stop</button></div>
+            <button className="btn-primary" onClick={handleDisconnect}>Stop </button></div>
 
-            </div>:<div className="flex w-full gap-3">
+            </div>:<div className="flex w-1/2 gap-3">
               <input
                 className="w-full p-2 outline-green-500 border-2 border-green-500 rounded-lg"
                 ref={ID_Ref}
@@ -223,17 +223,17 @@ function SendFile({SetPage}) {
               <button className="btn-primary" onClick={handleConnection}>Connect</button>
             </div>}
             
-            <div>
+          {connectedPeerID ?  <div>
               <input type="file" ref={fileInputRef} />
               <button className="btn-primary" onClick={sendFile}>Send File</button>
-            </div>
+            </div> : null } 
           
             
             {receivedFile && (
               <div>
                 <h3 className="text-lg font-semibold">Received File:</h3>
                 <a className="font-bold" href={receivedFile} download={receivedFileName}>
-                  <button className="btn-primary m-2">Download </button>
+                  <div  className="flex btn-primary text-lg m-2 gap-2"><span>Download</span> <DownloadSimple size={32} /> </div>
                   {receivedFileName}
                 </a>
               </div>
