@@ -9,7 +9,10 @@
     @apply bg-green-500 hover:bg-green-600 text-white p-3 rounded-xl font-semibold;
   }
 }
-
+.custom-Scrollbar::-webkit-scrollbar {
+  width: 0px;
+  height: 0px; 
+}
 body{
   overflow: hidden;
   margin: 0;
