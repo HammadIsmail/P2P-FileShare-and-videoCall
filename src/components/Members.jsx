@@ -6,7 +6,7 @@ const Members = ({SetPage}) => {
         <button onClick={()=>SetPage(0)} className="btn-primary mb-2">Back</button>
       <div className="flex flex-wrap items-center justify-between p-4 pb-10 " >
         <div className="flex flex-col items-center">
-          <img src="Hammad.JPG" className="w-72 h-96 object-cover" alt="Hammad" />
+          <img src="Hammad.jpg" className="w-72 h-96 object-cover" alt="Hammad" />
           <p className="mt-4 text-lg font-semibold">Hammad (2023-CS-807)</p>
         </div>
         <div className="flex flex-col items-center">
