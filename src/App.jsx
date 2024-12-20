@@ -26,7 +26,7 @@ function App() {
         page==2?<SendFile SetPage={SetPage} />:null
       }
       {
-        page==3 ?<Members/>:null
+        page==3 ?<Members SetPage={SetPage} />:null
       }
       <ToastContainer/>
     </>
